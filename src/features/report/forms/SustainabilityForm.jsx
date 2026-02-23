@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { useReportStore } from '@/store/reportStore';
 
 // Form handling hook
@@ -51,6 +50,7 @@ const SustainabilityForm = ({
           value={sustainability.continuationPlan}
           error={errors.continuationPlan}
           onChangeText={text => handleChange('continuationPlan', text)}
+          placeholder="Describe how the project will continue..."
           multiline
           numberOfLines={3}
           maxLength={225}
@@ -62,6 +62,7 @@ const SustainabilityForm = ({
           value={sustainability.scalabilityPotential}
           error={errors.scalabilityPotential}
           onChangeText={text => handleChange('scalabilityPotential', text)}
+          placeholder="Explain potential for scaling..."
           multiline
           numberOfLines={3}
           maxLength={225}
@@ -73,6 +74,7 @@ const SustainabilityForm = ({
           value={sustainability.replicationPossibilities}
           error={errors.replicationPossibilities}
           onChangeText={text => handleChange('replicationPossibilities', text)}
+          placeholder="Mention how this model can be replicated..."
           multiline
           numberOfLines={3}
           maxLength={190}

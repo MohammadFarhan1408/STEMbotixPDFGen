@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useReportStore } from '@/store/reportStore';
 
 // Form handling hook
@@ -79,6 +72,17 @@ const BeneficiaryProfileForm = ({
         return { genderDistribution: 'Gender distribution must sum to 100%' };
       }
 
+      // Age group validation
+      if (data.ageGroup) {
+        const [from, to] = data.ageGroup.split('-').map(n => Number(n));
+
+        if (!Number.isFinite(from) || !Number.isFinite(to)) {
+          errors.ageGroup = 'Both ages must be valid numbers';
+        } else if (from > to) {
+          errors.ageGroup = '"From" age cannot be greater than "To" age';
+        }
+      }
+
       return {};
     },
     isLastStep,
@@ -102,7 +106,9 @@ const BeneficiaryProfileForm = ({
           keyboardType="numeric"
           placeholder="Enter total beneficiaries"
           error={errors.totalBeneficiaries}
-          onChangeText={text => handleChange('totalBeneficiaries', text)}
+          onChangeText={text =>
+            handleChange('totalBeneficiaries', Number(text) || 0)
+          }
         />
 
         {/* Age Group */}
@@ -116,7 +122,12 @@ const BeneficiaryProfileForm = ({
               keyboardType="numeric"
               error={errors.ageGroup}
               onChangeText={text => {
-                const updated = `${text || ''}-${toAge || ''}`;
+                const from = Number(text) || 0;
+                const to = Number(toAge) || 0;
+
+                const safeFrom = to ? Math.min(from, to) : from;
+
+                const updated = `${safeFrom}-${toAge || ''}`;
                 handleChange('ageGroup', updated);
               }}
             />
@@ -128,7 +139,12 @@ const BeneficiaryProfileForm = ({
               keyboardType="numeric"
               error={errors.ageGroup}
               onChangeText={text => {
-                const updated = `${fromAge || ''}-${text || ''}`;
+                const to = Number(text) || 0;
+                const from = Number(fromAge) || 0;
+
+                const safeTo = from ? Math.max(to, from) : to;
+
+                const updated = `${fromAge || ''}-${safeTo}`;
                 handleChange('ageGroup', updated);
               }}
             />

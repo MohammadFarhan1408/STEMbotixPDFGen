@@ -9,9 +9,11 @@ const Input = ({
   keyboardType = 'default',
   multiline = false,
   error = null,
-  required = false,
+  // required = false,
   style,
   inputStyle,
+  minLength,
+  maxLength,
   ...rest
 }) => {
   return (
@@ -19,7 +21,7 @@ const Input = ({
       {label && (
         <Text style={styles.label}>
           {label}
-          {required && <Text style={styles.required}> *</Text>}
+          {/* {required && <Text style={styles.required}> *</Text>} */}
         </Text>
       )}
 
@@ -36,6 +38,8 @@ const Input = ({
         placeholderTextColor="#999"
         keyboardType={keyboardType}
         multiline={multiline}
+        minLength={minLength}
+        maxLength={maxLength}
         {...rest}
       />
 

@@ -1,5 +1,4 @@
-import { SectionTitle } from '@/pdf/components/SectionTitle';
-import { quantitativeImpactStyles } from '../styles/quantitativeImpactStyles';
+import { quantitativeImpactStyles } from '../styles/quantitativeStyles';
 
 export const QuantitativeImpactSection = data => {
   const {
@@ -12,8 +11,6 @@ export const QuantitativeImpactSection = data => {
 
   return `
     ${quantitativeImpactStyles}
-
-    ${SectionTitle('Quantitative Impact')}
 
     <div class="quant-container">
 

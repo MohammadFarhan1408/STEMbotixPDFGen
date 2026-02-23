@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { useReportStore } from '@/store/reportStore';
 
 // Form handling hook
@@ -55,7 +54,7 @@ const LearningOutcomesForm = ({
           onChangeText={text => handleChange('technicalSkillsGained', text)}
           multiline
           numberOfLines={3}
-          maxLength={250}
+          maxLength={100}
         />
 
         {/* Soft Skills */}
@@ -65,6 +64,8 @@ const LearningOutcomesForm = ({
           placeholder="e.g. Critical Thinking, Teamwork, Problem Solving..."
           error={errors.softSkillsDeveloped}
           onChangeText={text => handleChange('softSkillsDeveloped', text)}
+          multiline
+          numberOfLines={3}
           maxLength={100}
         />
 
@@ -85,7 +86,7 @@ const LearningOutcomesForm = ({
           placeholder="Enter hours"
           error={errors.handsOnLearningHours}
           onChangeText={text =>
-            handleChange('handsOnLearningHours', Number(text) || 0)
+            handleChange('handsOnLearningHours', Number(text) || 1)
           }
           keyboardType="numeric"
         />

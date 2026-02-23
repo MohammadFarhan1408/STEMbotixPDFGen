@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { useReportStore } from '@/store/reportStore';
 
 // Form handling hook
@@ -44,6 +43,7 @@ const ChallengesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
           value={challengesAndLearnings.keyChallenges}
           error={errors.keyChallenges}
           onChangeText={text => handleChange('keyChallenges', text)}
+          placeholder="Describe key challenges..."
           multiline
           numberOfLines={4}
           maxLength={210}
@@ -55,6 +55,7 @@ const ChallengesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
           value={challengesAndLearnings.mitigationStrategies}
           error={errors.mitigationStrategies}
           onChangeText={text => handleChange('mitigationStrategies', text)}
+          placeholder="Describe mitigation strategies..."
           multiline
           numberOfLines={4}
           maxLength={210}
@@ -66,6 +67,7 @@ const ChallengesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
           value={challengesAndLearnings.lessonsLearned}
           error={errors.lessonsLearned}
           onChangeText={text => handleChange('lessonsLearned', text)}
+          placeholder="Enter lessons learned..."
           multiline
           numberOfLines={4}
           maxLength={175}

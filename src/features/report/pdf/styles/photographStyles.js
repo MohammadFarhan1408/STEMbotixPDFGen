@@ -2,19 +2,16 @@ export const photographStyles = `
 <style>
 
 .photo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 15px;
 }
 
 .photo-item {
-  width: 48%;
-  height: 140px;
-  margin-bottom: 14px;
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid #e2e8f0;
+  aspect-ratio: 5/3;
 }
 
 .photo-item img {

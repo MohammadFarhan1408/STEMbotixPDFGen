@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { useReportStore } from '@/store/reportStore';
 
 // Form handling hook
@@ -27,7 +26,6 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
       updateProjectOverview('projectOverview', field, value),
     requiredFields: [
       'projectTitle',
-      'projectDescription',
       'implementingOrganization',
       'partnerSponsor',
       'projectDuration',
@@ -53,14 +51,6 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
           placeholder="Enter a descriptive project name"
           error={errors.projectTitle}
           onChangeText={text => handleChange('projectTitle', text)}
-        />
-
-        <Input
-          label="Project Description"
-          value={projectOverview.projectDescription}
-          placeholder="Describe the project in detail"
-          error={errors.projectDescription}
-          onChangeText={text => handleChange('projectDescription', text)}
         />
 
         <Input
@@ -105,6 +95,11 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
           label="Start Date"
           fieldName="startDate"
           value={projectOverview.startDate}
+          maximumDate={
+            projectOverview.endDate
+              ? new Date(projectOverview.endDate)
+              : undefined
+          }
           placeholder="Select start date"
           error={errors.startDate}
           onChange={date => handleChange('startDate', date)}
@@ -114,6 +109,11 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
           label="End Date"
           fieldName="endDate"
           value={projectOverview.endDate}
+          minimumDate={
+            projectOverview.startDate
+              ? new Date(projectOverview.startDate)
+              : undefined
+          }
           placeholder="2026-12-31"
           error={errors.endDate}
           onChange={date => handleChange('endDate', date)}
@@ -150,5 +150,3 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
 };
 
 export default ProjectForm;
-
-const styles = StyleSheet.create({});

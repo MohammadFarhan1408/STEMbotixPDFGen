@@ -1,5 +1,5 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
-import { SectionTitle } from '@/pdf/components/SectionTitle';
+import SectionTitle from '@/pdf/components/SectionTitle';
 import { projectStyles } from '../styles/projectStyles';
 
 export const ProjectPage = async data => {
@@ -21,7 +21,7 @@ export const ProjectPage = async data => {
   const content = `
     ${projectStyles}
 
-    ${SectionTitle('Project Overview')}
+    ${SectionTitle({ title: 'Project Overview' })}
 
     <div class="container">
 

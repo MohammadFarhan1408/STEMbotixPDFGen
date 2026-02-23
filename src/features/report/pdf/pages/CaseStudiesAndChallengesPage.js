@@ -8,12 +8,12 @@ export const CaseStudiesAndChallengesPage = async data => {
   const content = `
     <div class="page-container">
 
-      ${SectionTitle('Case Studies / Success Stories')}
+      ${SectionTitle({ title: 'Case Studies / Success Stories' })}
       ${CaseStudiesSection(data)}
-
+      
       <div class="section-spacing"></div>
-
-      ${SectionTitle('Challenges & Learnings')}
+      
+      ${SectionTitle({ title: 'Challenges & Learnings' })}
       ${ChallengesSection(data)}
 
     </div>

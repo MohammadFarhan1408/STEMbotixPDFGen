@@ -1,5 +1,5 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
-import { SectionTitle } from '@/pdf/components/SectionTitle';
+import SectionTitle from '@/pdf/components/SectionTitle';
 import { summaryStyles } from '../styles/summaryStyles';
 
 export const SummaryPage = async data => {
@@ -10,7 +10,7 @@ export const SummaryPage = async data => {
   const content = `
     ${summaryStyles}
 
-    ${SectionTitle('Summary')}
+      ${SectionTitle({ title: 'Summary' })}
 
     <div class="summary-container">
 

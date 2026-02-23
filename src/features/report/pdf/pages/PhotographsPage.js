@@ -1,5 +1,5 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
-import { SectionTitle } from '@/pdf/components/SectionTitle';
+import SectionTitle from '@/pdf/components/SectionTitle';
 import { photographStyles } from '../styles/photographStyles';
 
 export const PhotographsPage = async data => {
@@ -7,8 +7,8 @@ export const PhotographsPage = async data => {
 
   const imagesHTML = photographs
     .slice(0, 8) // limit to 8 like original
-    .map(photo => {
-      const uri = photo?.uri || photo; // supports both formats
+    .map(uri => {
+      // const uri = photo?.uri || photo; // supports both formats
       return `
         <div class="photo-item">
           <img src="${uri}" />
@@ -27,7 +27,7 @@ export const PhotographsPage = async data => {
   }
 
   const content = `
-    ${SectionTitle('Photographs')}
+    ${SectionTitle({ title: 'Photographs' })}
     ${photographStyles}
     <div class="photo-grid">
       ${imagesHTML}

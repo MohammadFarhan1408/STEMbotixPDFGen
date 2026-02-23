@@ -1,6 +1,6 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
 import SectionTitle from '@/pdf/components/SectionTitle';
-import { tableOfContentsStyles } from './styles';
+import { tableOfContentsStyles } from '../styles/tableOfContentsStyles';
 
 export const TableOfContentsPage = async data => {
   const pageBlocks = [

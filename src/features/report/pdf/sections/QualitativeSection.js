@@ -1,5 +1,4 @@
-import { SectionTitle } from '@/pdf/components/SectionTitle';
-import { qualitativeImpactStyles } from '../styles/qualitativeImpactStyles';
+import { qualitativeImpactStyles } from '../styles/qualitativeStyles';
 
 export const QualitativeImpactSection = data => {
   const {
@@ -12,8 +11,6 @@ export const QualitativeImpactSection = data => {
 
   return `
     ${qualitativeImpactStyles}
-
-    ${SectionTitle('Qualitative Impact & Behavioral Change')}
 
     <div class="qual-grid">
 

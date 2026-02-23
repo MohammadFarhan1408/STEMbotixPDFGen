@@ -8,6 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import { launchImageLibrary } from 'react-native-image-picker';
+import { pickedImageToBase64 } from '@/utils/pickedImageToBase64';
 
 const ImageUploadField = ({
   label,
@@ -34,7 +35,9 @@ const ImageUploadField = ({
 
         const assets = response.assets || [];
         if (assets.length > 0) {
-          onChange(assets);
+          Promise.all(assets.map(pickedImageToBase64)).then(base64Images => {
+            onChange(base64Images); // now store array of base64 strings
+          });
         }
       },
     );
@@ -65,7 +68,7 @@ const ImageUploadField = ({
           {value.map((img, index) => (
             <View key={index} style={styles.imageWrapper}>
               <Image
-                source={{ uri: img.uri }}
+                source={{ uri: img }}
                 style={styles.image}
                 resizeMode="cover"
               />
