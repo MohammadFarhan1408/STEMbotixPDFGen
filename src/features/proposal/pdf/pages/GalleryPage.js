@@ -1,6 +1,6 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
 import SectionTitle from '@/pdf/components/SectionTitle';
-import { galleryPageStyles } from './styles';
+import { galleryPageStyles } from '../styles/galleryPageStyles';
 
 const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>

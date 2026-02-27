@@ -83,6 +83,23 @@ export const aboutStembotixStyles = `
     flex-shrink: 0;
   }
 
+  .about-page__contact-section {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid #ccc;
+    font-size: 10px;
+  }
+
+  .about-page__contact-heading {
+    font-size: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+
+  .about-page__contact-line {
+    margin-bottom: 2px;
+  }
+
   .about-page__signature-section {
     margin-top: 10px;
     border-top: 1px solid #e2e8f0;

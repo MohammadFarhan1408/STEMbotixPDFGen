@@ -20,8 +20,8 @@ export const qualitativeImpactStyles = `
 }
 
 .indicator {
-  width: 24px;
-  height: 4px;
+  width: 25px;
+  height: 5px;
   border-radius: 3px;
   margin-bottom: 8px;
 }
@@ -43,7 +43,7 @@ export const qualitativeImpactStyles = `
   font-size: 11px;
   line-height: 1.5;
   color: #334155;
-  text-align: justify;
+  text-align: left;
 }
 
 .feedback-box {

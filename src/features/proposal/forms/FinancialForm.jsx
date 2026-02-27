@@ -118,6 +118,21 @@ const FinancialForm = ({
             </View>
 
             <Input
+              placeholder="Enter Specification"
+              value={String(it.specification)}
+              maxLength={50}
+              error={hasSubmitted ? hookErrors[`specification_${i}`] : null}
+              onChangeText={text => handleItemChange(i, 'specification', text)}
+            />
+
+            <Input
+              placeholder="Enter Bill of Quantities"
+              value={String(it.boq)}
+              error={hasSubmitted ? hookErrors[`boq_${i}`] : null}
+              onChangeText={text => handleItemChange(i, 'boq', text)}
+            />
+
+            <Input
               placeholder="Brief description"
               value={it.description}
               multiline

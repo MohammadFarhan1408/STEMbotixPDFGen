@@ -19,10 +19,7 @@ export const QualitativeImpactSection = data => {
           <div class="indicator orange"></div>
           <div class="card-label">CONFIDENCE IMPROVEMENT</div>
           <div class="card-body">
-            ${
-              confidenceImprovement ||
-              'Observed increase in student participation and public presentation confidence.'
-            }
+            ${confidenceImprovement}
           </div>
         </div>
 
@@ -30,10 +27,7 @@ export const QualitativeImpactSection = data => {
           <div class="indicator blue"></div>
           <div class="card-label">TEAMWORK & COLLABORATION</div>
           <div class="card-body">
-            ${
-              teamwork ||
-              'Improved collaborative engagement among participants.'
-            }
+            ${teamwork}
           </div>
         </div>
       </div>
@@ -43,10 +37,7 @@ export const QualitativeImpactSection = data => {
           <div class="indicator green"></div>
           <div class="card-label">CRITICAL THINKING</div>
           <div class="card-body">
-            ${
-              criticalThinking ||
-              'Enhanced analytical and problem-solving skills.'
-            }
+            ${criticalThinking}
           </div>
         </div>
 
@@ -54,10 +45,7 @@ export const QualitativeImpactSection = data => {
           <div class="indicator purple"></div>
           <div class="card-label">LEADERSHIP SKILLS</div>
           <div class="card-body">
-            ${
-              leadershipSkills ||
-              'Stronger initiative and peer guidance observed.'
-            }
+            ${leadershipSkills}
           </div>
         </div>
       </div>

@@ -23,7 +23,6 @@ const PDFHeader = async () => {
         justify-content: space-between;
         height: 60px;
         width: 100%;
-        background-color: white;
         z-index: 1000;
         box-sizing: border-box;
       }

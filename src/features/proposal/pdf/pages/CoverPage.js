@@ -1,5 +1,5 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
-import { coverPageStyles } from './styles';
+import { coverPageStyles } from '../styles/coverPageStyles';
 
 export const CoverPage = async data => {
   const { to, subject, date } = data?.proposal || {};

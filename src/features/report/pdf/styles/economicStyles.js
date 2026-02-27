@@ -58,6 +58,7 @@ export const economicStyles = `
 
 .text-area {
   padding-left: 16px;
+  margin-left: 4px;
   border-left: 1px solid #cbd5e1;
 }
 

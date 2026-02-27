@@ -1,5 +1,5 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
-import { proposalPageStyles } from './styles';
+import { proposalPageStyles } from '../styles/proposalPageStyles';
 
 export const ProposalPage = async data => {
   const { to, subject, description, date, salutation } = data?.proposal || {};

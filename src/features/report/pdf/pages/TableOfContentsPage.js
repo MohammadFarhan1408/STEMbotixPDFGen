@@ -1,14 +1,90 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
 import SectionTitle from '@/pdf/components/SectionTitle';
 import { tableOfContentsStyles } from '../styles/tableOfContentsStyles';
+import { useReportStore } from '@/store/reportStore';
 
 export const TableOfContentsPage = async data => {
+  const { economicImpact } = useReportStore.getState();
+
+  const isEconomicEmpty =
+    !economicImpact?.employabilityEnhancement &&
+    !economicImpact?.incomeOpportunities &&
+    !economicImpact?.costPerBeneficiary &&
+    !economicImpact?.roi;
+
   const pageBlocks = [
-    { items: [{ title: 'Proposal', target: 'proposal' }] },
-    { items: [{ title: 'About STEMbotix', target: 'about-stembotix' }] },
-    { items: [{ title: 'Project Proposal', target: 'project-proposal' }] },
-    { items: [{ title: 'Financial Proposal', target: 'financial-proposal' }] },
-    { items: [{ title: 'Gallery', target: 'gallery' }] },
+    { items: [{ title: 'Summary', target: 'summary' }] },
+
+    { items: [{ title: 'Project Overview', target: 'project-overview' }] },
+
+    {
+      items: [
+        {
+          title: 'Objectives & Intended Outcomes',
+          target: 'objectives',
+        },
+        {
+          optional: true,
+          show: !isEconomicEmpty,
+          title: 'Economic Impact',
+          target: 'economic-impact',
+        },
+      ],
+    },
+
+    {
+      items: [
+        { title: 'Beneficiary Profile', target: 'beneficiary' },
+        { title: 'Baseline vs Endline Comparison', target: 'baseline' },
+      ],
+    },
+
+    {
+      items: [
+        { title: 'Qualitative Impact', target: 'qualitative-impact' },
+        { title: 'Quantitative Impact', target: 'quantitative-impact' },
+      ],
+    },
+
+    {
+      items: [
+        {
+          title: 'Learning & Skill Outcomes',
+          target: 'learning-and-skill',
+        },
+        {
+          title: 'Institutional / Ecosystem Impact',
+          target: 'institutional-impact',
+        },
+      ],
+    },
+
+    {
+      items: [
+        { title: 'Social Impact', target: 'social-impact' },
+        {
+          title: 'Innovation & Technology Impact',
+          target: 'innovation-impact',
+        },
+      ],
+    },
+
+    {
+      items: [
+        { title: 'Case Studies / Success Stories', target: 'case-studies' },
+        { title: 'Challenges & Learnings', target: 'challenges-learning' },
+      ],
+    },
+
+    {
+      items: [
+        { title: 'Sustainability & Scalability', target: 'sustainability' },
+        {
+          title: 'Monitoring & Evaluation Methodology',
+          target: 'monitoring-evaluation',
+        },
+      ],
+    },
   ];
 
   const START_PAGE = 3;

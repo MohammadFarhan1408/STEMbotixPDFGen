@@ -1,8 +1,10 @@
 import SectionTitle from '@/pdf/components/SectionTitle';
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
-import { aboutStembotixStyles } from './styles';
+import { aboutStembotixStyles } from '../styles/aboutStembotixStyles';
 
 export const AboutStembotixPage = async data => {
+  const spoc = data?.spoc || {};
+
   const techSkills = [
     '3D Printing & Pens',
     'Basic Electronics',
@@ -117,10 +119,22 @@ export const AboutStembotixPage = async data => {
         ${statsHtml}
       </div>
 
+      <div class="about-page__contact-section">
+        <div class="about-page__contact-heading">Contact Person Details</div>
+        <div class="about-page__contact-line">${spoc.name}</div>
+        <div class="about-page__contact-line">
+          Designation: ${spoc.designation}
+        </div>
+        <div class="about-page__contact-line">Contact No.: ${spoc.phone}</div>
+        <div class="about-page__contact-line">Email ID: ${spoc.email}</div>
+      </div>
+
+      <!--
       <div class="about-page__signature-section">
         <div class="about-page__signature-name">Dhruvil Patel</div>
         <div class="about-page__signature-title">CTO, STEMbotix</div>
       </div>
+      -->
     </div>
   `;
 

@@ -26,28 +26,9 @@ export const backPageStyles = `
     font-size: 14px;
     text-align: center;
     color: #334155;
-    line-height: 1.5;
+    line-height: 1.2;
     white-space: pre-line; /* keeps line breaks */
   }
 
-  .back-page__footer {
-    align-items: center;
-    text-align: center;
-    padding-bottom: 40px;
-  }
-
-  .back-page__company {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #0f172a;
-    letter-spacing: 1px;
-  }
-
-  .back-page__contact-line {
-    font-size: 11px;
-    color: #475569;
-    margin-bottom: 3px;
-  }
 </style>
 `;

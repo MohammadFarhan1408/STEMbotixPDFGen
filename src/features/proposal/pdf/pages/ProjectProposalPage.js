@@ -1,6 +1,6 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
 import SectionTitle from '@/pdf/components/SectionTitle';
-import { projectProposalStyles } from './styles';
+import { projectProposalStyles } from '../styles/projectProposalStyles';
 
 export const ProjectProposalPage = async data => {
   const { title, intro, objectives, provision } = data?.projectProposal || {};

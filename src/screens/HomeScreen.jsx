@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Image,
   ScrollView,
@@ -9,10 +10,11 @@ import {
 import React, { useState } from 'react';
 import ProposalScreen from '../features/proposal/ProposalScreen';
 import ReportScreen from '../features/report/ReportScreen';
+import DeliveryScreen from '../features/delivery/DeliveryScreen';
 import STEMbotixLogo from '../assets/images/STEMbotix-Logo.png';
 
 const HomeScreen = () => {
-  const [mode, setMode] = useState(null); // "proposal" | "report" | null
+  const [mode, setMode] = useState(null); // "Proposal" | "Report" | "Delivery"
 
   const handleSwitchMode = () => {
     setMode(null);
@@ -78,6 +80,23 @@ const HomeScreen = () => {
                 </Text>
               </View>
             </TouchableOpacity>
+
+            {/* Delivery */}
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => setMode('delivery')}
+              activeOpacity={0.8}
+            >
+              <View
+                style={[styles.iconBox, { backgroundColor: '#e7000b' }]}
+              ></View>
+              <Text style={styles.cardTitle}>Delivery Certificate</Text>
+              <View style={styles.cardFooter}>
+                <Text style={[styles.cardAction, { color: '#e7000b' }]}>
+                  Generate Certificate →
+                </Text>
+              </View>
+            </TouchableOpacity>
           </View>
         ) : (
           <View style={styles.stepperContainer}>
@@ -85,6 +104,9 @@ const HomeScreen = () => {
               <ProposalScreen onBack={handleSwitchMode} />
             )}
             {mode === 'report' && <ReportScreen onBack={handleSwitchMode} />}
+            {mode === 'delivery' && (
+              <DeliveryScreen onBack={handleSwitchMode} />
+            )}
           </View>
         )}
       </View>

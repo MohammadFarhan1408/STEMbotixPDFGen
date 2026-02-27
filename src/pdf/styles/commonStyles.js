@@ -5,23 +5,27 @@ export const commonStyles = `
     padding: 0;
     box-sizing: border-box;
   } 
+  body{
+    font-family: "Helvetica", sans-serif;
+  }
+  
   @page {
     size: A4;
   }
+
   .page {
-    page-break-after: always;
     padding: 40px;
-    padding-top: 60px;
-    font-family: "Helvetica", sans-serif;
+    padding-top: 70px;
+    padding-bottom: 85px;
     display: flex;
     flex-direction: column;
+    page-break-after: always;
     min-height: calc(100vh - 170px);
   }
 
   .page-content {
     flex: 1;
   }
-
 
   .header {
     flex-direction: row;
@@ -37,9 +41,7 @@ export const commonStyles = `
     color: #0f172a;
   }
 
-  .watermark {
-  
-  }
+  .watermark {}
 
   .section-spacing {
     margin-top: 40px;

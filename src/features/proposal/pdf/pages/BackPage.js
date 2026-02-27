@@ -1,5 +1,5 @@
 import PDFPageLayout from '@/pdf/components/PDFPageLayout';
-import { backPageStyles } from './styles';
+import { backPageStyles } from '../styles/backPageStyles';
 
 export const BackPage = async data => {
   const content = `

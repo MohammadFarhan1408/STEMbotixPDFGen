@@ -15,7 +15,7 @@ export const EconomicSection = data => {
       <div class="metric-card">
         <div class="metric-label">COST PER BENEFICIARY</div>
         <div class="metric-value">
-          ${Number(costPerBeneficiary || 0).toLocaleString()}
+          ${Number(costPerBeneficiary).toLocaleString()}
         </div>
       </div>
 
@@ -24,7 +24,7 @@ export const EconomicSection = data => {
           RETURN ON INVESTMENT (ROI)
         </div>
         <div class="metric-value" style="color:#15803d;">
-          ${roi || 0}%
+          ${roi}%
         </div>
       </div>
     </div>
@@ -35,10 +35,7 @@ export const EconomicSection = data => {
         <div class="block-title">EMPLOYABILITY ENHANCEMENT</div>
       </div>
       <div class="text-area">
-        ${
-          employabilityEnhancement ||
-          'No employability data recorded for this period.'
-        }
+        ${employabilityEnhancement}
       </div>
     </div>
 
@@ -48,7 +45,7 @@ export const EconomicSection = data => {
         <div class="block-title">INCOME GENERATION OPPORTUNITIES</div>
       </div>
       <div class="text-area">
-        ${incomeOpportunities || 'No specific income opportunities documented.'}
+        ${incomeOpportunities}
       </div>
     </div>
   `;

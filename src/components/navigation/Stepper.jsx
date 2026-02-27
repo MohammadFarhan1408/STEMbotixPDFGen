@@ -26,11 +26,16 @@ const Stepper = ({ steps = [], useStore, onGeneratePDF }) => {
     }
   };
 
-  const handleGeneratePDF = async () => {
+  const handleGeneratePDF = async (...args) => {
     if (onGeneratePDF) {
       try {
         setIsGenerating(true);
-        await onGeneratePDF(data);
+        if (args.length > 0) {
+          await onGeneratePDF(...args);
+        } else {
+          await onGeneratePDF(data);
+        }
+        // await onGeneratePDF(data);
       } catch (err) {
         // assume the caller handles errors/alerts
         console.error('generatePDF handler threw', err);

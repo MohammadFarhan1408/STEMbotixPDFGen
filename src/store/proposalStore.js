@@ -20,7 +20,16 @@ export const useProposalStore = create(set => ({
     provision: [{ title: '', content: '' }],
   },
 
-  financialProposal: [{ particular: '', description: '', amount: 0 }],
+  financialProposal: [
+    { particular: '', specification: '', boq: '', description: '', amount: 0 },
+  ],
+
+  spoc: {
+    name: '',
+    designation: '',
+    email: '',
+    phone: '',
+  },
 
   gallery: [],
 
@@ -136,5 +145,11 @@ export const useProposalStore = create(set => ({
       },
       financialProposal: [{ particular: '', description: '', amount: 0 }],
       gallery: [],
+      spoc: {
+        name: '',
+        designation: '',
+        email: '',
+        phone: '',
+      },
     })),
 }));
